@@ -19,6 +19,9 @@ func load_level(level : LevelInfo):
 	if not player:
 		player = get_node_or_null("ViewportContainer/Viewport/Player")
 		player.connect("died",self,"on_player_died")
+	var idx : Array = GameController.worlds.get_level_index(level)
+	world_index = idx[0]
+	level_index = idx[1]
 	current_lvl = level.levelFile.instance()
 	$ViewportContainer/Viewport.add_child(current_lvl)
 	current_lvl.connect("finished",self,"load_next_level")

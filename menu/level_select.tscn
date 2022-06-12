@@ -1,11 +1,40 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://menu/main.tres" type="Theme" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+
+var btn_container : Control
+var world_select : PackedScene
+
+
+func _ready() -> void:
+	world_select = load(\"res://menu/world_select.tscn\")
+
+
+func display_levels(world : WorldInfo) -> void:
+	btn_container = $ScrollContainer/GridContainer as Control
+	for level_var in world.levels:
+		var level : LevelInfo = level_var
+		var btn := Button.new()
+		btn.text = level.name
+		btn.connect(\"pressed\",GameController,\"load_level\",[world.name + \"-\" + level.name])
+		btn.connect(\"pressed\",self,\"queue_free\")
+		btn_container.add_child(btn)
+
+
+func back_btn_pressed():
+	get_parent().add_child(world_select.instance())
+	queue_free()
+"
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = SubResource( 1 )
 
 [node name="BackBtn" type="Button" parent="."]
 margin_left = 20.0
@@ -13,3 +42,18 @@ margin_top = 20.0
 margin_right = 90.0
 margin_bottom = 90.0
 text = "<"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.2
+anchor_top = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.9
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+margin_right = 432.0
+margin_bottom = 864.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
