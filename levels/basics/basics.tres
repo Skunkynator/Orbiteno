@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=7 format=2]
+
+[ext_resource path="res://world_info.gd" type="Script" id=1]
+[ext_resource path="res://level_info.gd" type="Script" id=2]
+[ext_resource path="res://levels/basics/01.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/basics/02.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+Name = "01"
+levelFile = ExtResource( 3 )
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+Name = "02"
+levelFile = ExtResource( 4 )
+
+[resource]
+script = ExtResource( 1 )
+Name = "Basics"
+levels = [ SubResource( 1 ), SubResource( 2 ) ]
