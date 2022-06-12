@@ -7,15 +7,15 @@
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
-Name = "01"
+name = "01"
 levelFile = ExtResource( 3 )
 
 [sub_resource type="Resource" id=2]
 script = ExtResource( 2 )
-Name = "02"
+name = "02"
 levelFile = ExtResource( 4 )
 
 [resource]
 script = ExtResource( 1 )
-Name = "Basics"
+name = "Basics"
 levels = [ SubResource( 1 ), SubResource( 2 ) ]
