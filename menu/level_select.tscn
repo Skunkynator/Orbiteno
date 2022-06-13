@@ -57,3 +57,5 @@ margin_bottom = 864.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 4
+
+[connection signal="pressed" from="BackBtn" to="." method="back_btn_pressed"]
