@@ -14,7 +14,10 @@ position = Vector2( 360, -100 )
 script = ExtResource( 3 )
 
 [node name="Area2D" parent="Node2D" index="0" instance=ExtResource( 2 )]
-obj_size = Vector2( 400, 100 )
+position = Vector2( -150, 0 )
+
+[node name="Area2D3" parent="Node2D" index="1" instance=ExtResource( 2 )]
+position = Vector2( 150, 0 )
 
 [node name="Node2D2" type="Node2D" parent="." index="3"]
 position = Vector2( 360, -700 )
@@ -22,7 +25,10 @@ script = ExtResource( 3 )
 speed = -1.0
 
 [node name="Area2D" parent="Node2D2" index="0" instance=ExtResource( 2 )]
-obj_size = Vector2( 400, 100 )
+position = Vector2( -150, 0 )
+
+[node name="Area2D3" parent="Node2D2" index="1" instance=ExtResource( 2 )]
+position = Vector2( 150, 0 )
 
 [node name="Area2D" parent="." index="4" instance=ExtResource( 2 )]
 position = Vector2( 700, -1300 )
@@ -36,25 +42,20 @@ obj_size = Vector2( 100, 500 )
 
 [node name="Area2D3" parent="." index="6" instance=ExtResource( 2 )]
 position = Vector2( 360, -2500 )
-scale = Vector2( 1, 1 )
 obj_size = Vector2( 100, 1000 )
 
 [node name="Area2D4" parent="." index="7" instance=ExtResource( 2 )]
 position = Vector2( 360, -2200 )
-scale = Vector2( 1, 1 )
 obj_size = Vector2( 300, 100 )
 
 [node name="Area2D5" parent="." index="8" instance=ExtResource( 2 )]
 position = Vector2( 360, -3000 )
-scale = Vector2( 1, 1 )
 obj_size = Vector2( 300, 100 )
 
 [node name="Area2D6" parent="." index="9" instance=ExtResource( 2 )]
 position = Vector2( 0, -2600 )
-scale = Vector2( 1, 1 )
 obj_size = Vector2( 300, 100 )
 
 [node name="Area2D7" parent="." index="10" instance=ExtResource( 2 )]
 position = Vector2( 720, -2600 )
-scale = Vector2( 1, 1 )
 obj_size = Vector2( 300, 100 )

@@ -8,28 +8,22 @@
 [node name="End" parent="." index="0"]
 position = Vector2( 0, -4600 )
 
-[node name="RightWall" parent="Tween" index="0"]
-position = Vector2( 712, -2 )
-
 [node name="Node2D" type="Node2D" parent="." index="2"]
 position = Vector2( 360, -50 )
 
 [node name="Area2D" parent="Node2D" index="0" instance=ExtResource( 2 )]
 position = Vector2( -160, -200 )
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 obj_size = Vector2( 300, 300 )
 
 [node name="Area2D2" parent="Node2D" index="1" instance=ExtResource( 2 )]
 position = Vector2( 160, -550 )
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 obj_size = Vector2( 300, 300 )
 
 [node name="Area2D3" parent="Node2D" index="2" instance=ExtResource( 2 )]
 position = Vector2( -160, -900 )
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 obj_size = Vector2( 300, 300 )
 
 [node name="Area2D4" parent="." index="3" instance=ExtResource( 2 )]
@@ -62,7 +56,6 @@ obj_size = Vector2( 400, 100 )
 [node name="Area2D10" parent="." index="9" instance=ExtResource( 2 )]
 position = Vector2( 520, -3300 )
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 obj_size = Vector2( 300, 300 )
 
 [node name="Node2D2" type="Node2D" parent="." index="10"]
@@ -71,17 +64,14 @@ position = Vector2( 360, -3450 )
 [node name="Area2D" parent="Node2D2" index="0" instance=ExtResource( 2 )]
 position = Vector2( -160, -200 )
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 obj_size = Vector2( 300, 300 )
 
 [node name="Area2D2" parent="Node2D2" index="1" instance=ExtResource( 2 )]
 position = Vector2( 160, -550 )
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 obj_size = Vector2( 300, 300 )
 
 [node name="Area2D3" parent="Node2D2" index="2" instance=ExtResource( 2 )]
 position = Vector2( -160, -900 )
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 obj_size = Vector2( 300, 300 )
