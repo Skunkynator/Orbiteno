@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://menu/pause.tscn" type="PackedScene" id=2]
 [ext_resource path="res://level_base/negate_text.gdshader" type="Shader" id=3]
 [ext_resource path="res://menu/main.tres" type="Theme" id=4]
 [ext_resource path="res://menu/level_controller.gd" type="Script" id=5]
@@ -29,12 +30,16 @@ render_target_update_mode = 3
 [node name="Player" parent="ViewportContainer/Viewport" instance=ExtResource( 1 )]
 position = Vector2( 360, 980 )
 
+[node name="PauseMenu" parent="." instance=ExtResource( 2 )]
+visible = false
+
 [node name="PauseBtn" type="Button" parent="."]
 use_parent_material = true
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 91.0
 margin_bottom = 90.0
+action_mode = 0
 text = "| |"
 
 [connection signal="pressed" from="PauseBtn" to="." method="pause"]

@@ -11,6 +11,7 @@ var player : Node2D
 
 func pause() -> void:
 	get_tree().paused = !get_tree().paused
+	$PauseMenu.visible = !$PauseMenu.visible
 
 
 func load_level(level : LevelInfo):
