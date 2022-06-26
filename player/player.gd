@@ -25,6 +25,12 @@ func _ready():
 		area.connect("area_entered",self,"wall_entered")
 
 
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_UNPAUSED:
+		touches.clear()
+		touch_sum = 0
+
+
 func _input(event):
 	if event is InputEventScreenTouch:
 		if not event.pressed and event.index in touches:
@@ -52,3 +58,4 @@ func reset_rotator() -> void:
 	dead = true
 	yield(get_tree().create_timer(time),"timeout")
 	dead = false
+
