@@ -58,21 +58,21 @@ grow_horizontal = 2
 alignment = 1
 
 [node name="PlayBtn" type="Button" parent="VBoxContainer"]
-margin_top = 415.0
+margin_top = 515.0
 margin_right = 326.0
-margin_bottom = 485.0
+margin_bottom = 585.0
 text = "Play"
 
 [node name="LvlBtn" type="Button" parent="VBoxContainer"]
-margin_top = 505.0
+margin_top = 605.0
 margin_right = 326.0
-margin_bottom = 575.0
+margin_bottom = 675.0
 text = "Level Select"
 
 [node name="QuitBtn" type="Button" parent="VBoxContainer"]
-margin_top = 595.0
+margin_top = 695.0
 margin_right = 326.0
-margin_bottom = 665.0
+margin_bottom = 765.0
 text = "Quit"
 
 [connection signal="button_up" from="VBoxContainer/PlayBtn" to="." method="play"]

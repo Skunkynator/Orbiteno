@@ -61,7 +61,9 @@ GameController="*res://game_controller.gd"
 [display]
 
 window/size/width=720
-window/size/height=1080
+window/size/height=1280
+window/size/fullscreen=true
+window/handheld/orientation="sensor_portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

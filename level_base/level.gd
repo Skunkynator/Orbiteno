@@ -15,7 +15,7 @@ func _ready() -> void:
 		printerr("No End node defined for Level!")
 		queue_free()
 		return
-	height = -end.position.y + 1080
+	height = -end.position.y + 1280
 
 
 func _process(delta: float) -> void:
