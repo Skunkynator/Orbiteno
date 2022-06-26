@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://level_base/obstacle.gd" type="Script" id=1]
 [ext_resource path="res://level_base/negate.gdshader" type="Shader" id=2]
@@ -6,11 +6,19 @@
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
 
-[sub_resource type="QuadMesh" id=2]
-size = Vector2( 100, 100 )
-
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 50, 50 )
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 2 )
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 6 )
+width = 1
 
 [node name="Area2D" type="Area2D"]
 material = SubResource( 1 )
@@ -21,10 +29,11 @@ monitoring = false
 script = ExtResource( 1 )
 obj_size = Vector2( 100, 100 )
 
-[node name="Visual" type="MeshInstance2D" parent="."]
-use_parent_material = true
-mesh = SubResource( 2 )
-
 [node name="Collision" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource( 3 )
+shape = SubResource( 8 )
+
+[node name="Visual" type="Sprite" parent="."]
+material = SubResource( 7 )
+scale = Vector2( 100, 100 )
+texture = SubResource( 5 )
