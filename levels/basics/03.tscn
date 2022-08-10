@@ -6,7 +6,7 @@
 [node name="Level" instance=ExtResource( 2 )]
 
 [node name="End" parent="." index="0"]
-position = Vector2( 0, -3000 )
+position = Vector2( 0, -3100 )
 
 [node name="Area2D" parent="." index="2" instance=ExtResource( 1 )]
 position = Vector2( 200, 0 )
