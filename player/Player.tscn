@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://player/circle.png" type="Texture" id=1]
 [ext_resource path="res://player/sdf_2d.gdshader" type="Shader" id=2]
@@ -15,17 +15,35 @@ _data = [ Vector2( 0, 0 ), 0.0, 1.88053, 0, 0, Vector2( 1, 1 ), 0.0633289, 0.0, 
 offsets = PoolRealArray( 0, 0.0218978, 0.693431 )
 colors = PoolColorArray( 0, 0.0838315, 0.0901717, 0.122137, 0.576471, 0, 0, 0.294118, 0.667969, 0, 0, 1 )
 
+[sub_resource type="Gradient" id=9]
+colors = PoolColorArray( 1, 0, 0, 0, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=10]
+gradient = SubResource( 9 )
+width = 4
+
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 2 )
-shader_param/col = Color( 1, 0, 0, 1 )
+shader_param/lowest = 0.1
+shader_param/highest = 0.14
+shader_param/gradient = SubResource( 10 )
 
 [sub_resource type="Gradient" id=5]
 offsets = PoolRealArray( 0, 0.0145985, 0.883212 )
 colors = PoolColorArray( 0, 0.0838315, 0.0901717, 0.122137, 0, 0.552941, 0.576471, 0.294118, 0, 0.652313, 0.667969, 1 )
 
+[sub_resource type="Gradient" id=7]
+colors = PoolColorArray( 0.0588235, 0.882353, 0.847059, 0, 0.0588235, 0.882353, 0.847059, 1 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
+width = 4
+
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
-shader_param/col = Color( 0.0588235, 0.882353, 0.847059, 1 )
+shader_param/lowest = 0.1
+shader_param/highest = 0.14
+shader_param/gradient = SubResource( 8 )
 
 [node name="Player" type="Node2D"]
 rotation = 0.00052649
@@ -67,6 +85,7 @@ texture = ExtResource( 1 )
 position = Vector2( 200, 0 )
 
 [node name="Area" type="Area2D" parent="Rotator/Ball2"]
+visible = false
 collision_layer = 0
 collision_mask = 2147483650
 monitorable = false

@@ -1,8 +1,10 @@
 shader_type canvas_item;
 
-uniform vec4 col : hint_color = vec4(1.,0.,0.,1.);
+uniform sampler2D gradient;
+uniform float lowest : hint_range(0.0, 1.0, 0.01) = 0.0;
+uniform float highest : hint_range(0.0, 1.0, 0.01) = 1.0;
 
 void fragment() {
-	COLOR = col;
-	COLOR.a *= smoothstep(0.1,0.14,texture(TEXTURE, UV).g);
+	float col_index = smoothstep(lowest,highest,texture(TEXTURE, UV).g);
+	COLOR = texture(gradient, vec2(col_index));
 }
