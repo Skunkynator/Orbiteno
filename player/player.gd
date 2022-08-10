@@ -53,8 +53,9 @@ func wall_entered(wall) -> void:
 
 func reset_rotator() -> void:
 	var time := 2.0
-	$Tween.interpolate_property(rotator,"rotation",null,0,time,Tween.TRANS_BACK)
-	$Tween.start()
+	create_tween()\
+			.tween_property(rotator,"rotation",0.0,time)\
+			.set_trans(Tween.TRANS_BACK)
 	dead = true
 	yield(get_tree().create_timer(time),"timeout")
 	dead = false

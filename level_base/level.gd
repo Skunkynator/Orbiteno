@@ -29,7 +29,8 @@ func _process(delta: float) -> void:
 func scroll_to_start() -> void:
 	var time := 2.0
 	moving = false
-	$Tween.interpolate_property(self,"position:y",null,0,time,Tween.TRANS_BACK)
-	$Tween.start()
+	create_tween()\
+			.tween_property(self,"position:y",0.0,time)\
+			.set_trans(Tween.TRANS_BACK)
 	yield(get_tree().create_timer(time),"timeout")
 	moving = true

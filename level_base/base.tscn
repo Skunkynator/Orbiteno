@@ -8,11 +8,11 @@ script = ExtResource( 2 )
 
 [node name="End" type="Node2D" parent="."]
 
-[node name="Tween" type="Tween" parent="."]
+[node name="walls" type="Node" parent="."]
 
-[node name="RightWall" parent="Tween" instance=ExtResource( 3 )]
+[node name="RightWall" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 720, 0 )
 obj_size = Vector2( 100, 300000 )
 
-[node name="LeftWall" parent="Tween" instance=ExtResource( 3 )]
+[node name="LeftWall" parent="walls" instance=ExtResource( 3 )]
 obj_size = Vector2( 100, 300000 )
