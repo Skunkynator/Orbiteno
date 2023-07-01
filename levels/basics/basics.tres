@@ -1,57 +1,57 @@
-[gd_resource type="Resource" load_steps=19 format=2]
+[gd_resource type="Resource" script_class="WorldInfo" load_steps=19 format=3 uid="uid://k06qispryexq"]
 
-[ext_resource path="res://world_info.gd" type="Script" id=1]
-[ext_resource path="res://level_info.gd" type="Script" id=2]
-[ext_resource path="res://levels/basics/01.tscn" type="PackedScene" id=3]
-[ext_resource path="res://levels/basics/02.tscn" type="PackedScene" id=4]
-[ext_resource path="res://levels/basics/03.tscn" type="PackedScene" id=5]
-[ext_resource path="res://levels/basics/04.tscn" type="PackedScene" id=6]
-[ext_resource path="res://levels/basics/05.tscn" type="PackedScene" id=7]
-[ext_resource path="res://levels/basics/06.tscn" type="PackedScene" id=8]
-[ext_resource path="res://levels/basics/07.tscn" type="PackedScene" id=9]
-[ext_resource path="res://levels/basics/08.tscn" type="PackedScene" id=10]
+[ext_resource type="Script" path="res://world_info.gd" id="1"]
+[ext_resource type="Script" path="res://level_info.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://db1du4jrm7ugs" path="res://levels/basics/01.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://vuwm65irvcsv" path="res://levels/basics/02.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://d2b223ncbsofe" path="res://levels/basics/03.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://bwk8mbkhefb" path="res://levels/basics/04.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://dseeyv8hke5sa" path="res://levels/basics/05.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://bkr0luukrihu1" path="res://levels/basics/06.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://bqgtw2wtxo2me" path="res://levels/basics/07.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://levels/basics/08.tscn" id="10"]
 
-[sub_resource type="Resource" id=1]
-script = ExtResource( 2 )
+[sub_resource type="Resource" id="1"]
+script = ExtResource("2")
 name = "01"
-levelFile = ExtResource( 3 )
+levelFile = ExtResource("3")
 
-[sub_resource type="Resource" id=2]
-script = ExtResource( 2 )
+[sub_resource type="Resource" id="2"]
+script = ExtResource("2")
 name = "02"
-levelFile = ExtResource( 4 )
+levelFile = ExtResource("4")
 
-[sub_resource type="Resource" id=3]
-script = ExtResource( 2 )
+[sub_resource type="Resource" id="3"]
+script = ExtResource("2")
 name = "03"
-levelFile = ExtResource( 5 )
+levelFile = ExtResource("5")
 
-[sub_resource type="Resource" id=4]
-script = ExtResource( 2 )
+[sub_resource type="Resource" id="4"]
+script = ExtResource("2")
 name = "04"
-levelFile = ExtResource( 6 )
+levelFile = ExtResource("6")
 
-[sub_resource type="Resource" id=5]
-script = ExtResource( 2 )
+[sub_resource type="Resource" id="5"]
+script = ExtResource("2")
 name = "05"
-levelFile = ExtResource( 7 )
+levelFile = ExtResource("7")
 
-[sub_resource type="Resource" id=6]
-script = ExtResource( 2 )
+[sub_resource type="Resource" id="6"]
+script = ExtResource("2")
 name = "06"
-levelFile = ExtResource( 8 )
+levelFile = ExtResource("8")
 
-[sub_resource type="Resource" id=7]
-script = ExtResource( 2 )
+[sub_resource type="Resource" id="7"]
+script = ExtResource("2")
 name = "07"
-levelFile = ExtResource( 9 )
+levelFile = ExtResource("9")
 
-[sub_resource type="Resource" id=8]
-script = ExtResource( 2 )
+[sub_resource type="Resource" id="8"]
+script = ExtResource("2")
 name = "08"
-levelFile = ExtResource( 10 )
+levelFile = ExtResource("10")
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Basics"
-levels = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ]
+levels = Array[ExtResource("2")]([SubResource("1"), SubResource("2"), SubResource("3"), SubResource("4"), SubResource("5"), SubResource("6"), SubResource("7"), SubResource("8")])

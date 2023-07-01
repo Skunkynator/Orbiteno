@@ -4,16 +4,15 @@ extends Node2D
 signal died
 
 
-export var rotator_path : NodePath
-export(Array,NodePath) var ball_area_paths : Array
-export var rot_speed : float
+@export var rotator_path : NodePath
+@export var ball_area_paths : Array[NodePath]
+@export var rot_speed : float
 var rotator : Node2D
 var touches : Dictionary
 var touch_sum : int
 var dead := false
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	rotator = get_node_or_null(rotator_path) as Node2D
 	if not rotator:
@@ -22,7 +21,7 @@ func _ready():
 		var area := get_node_or_null(path) as Area2D
 		if not area:
 			continue
-		area.connect("area_entered",self,"wall_entered")
+		area.connect("area_entered", wall_entered)
 
 
 func _notification(what: int) -> void:
@@ -31,7 +30,7 @@ func _notification(what: int) -> void:
 		touch_sum = 0
 
 
-func _input(event):
+func _input(event : InputEvent):
 	if event is InputEventScreenTouch:
 		if not event.pressed and event.index in touches:
 			touch_sum -= touches[event.index]
@@ -57,6 +56,6 @@ func reset_rotator() -> void:
 			.tween_property(rotator,"rotation",0.0,time)\
 			.set_trans(Tween.TRANS_BACK)
 	dead = true
-	yield(get_tree().create_timer(time),"timeout")
+	await get_tree().create_timer(time).timeout
 	dead = false
 

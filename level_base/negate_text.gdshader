@@ -1,6 +1,8 @@
 shader_type canvas_item;
 
+uniform sampler2D screen : hint_screen_texture;
+
 void fragment() {
-	COLOR = 1. - texture(SCREEN_TEXTURE,SCREEN_UV);
+	COLOR = 1. - texture(screen,SCREEN_UV);
 	COLOR.a = texture(TEXTURE,UV).a;
 }

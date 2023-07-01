@@ -1,8 +1,8 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" script_class="WorldList" load_steps=3 format=3 uid="uid://b56xip7sfy1mq"]
 
-[ext_resource path="res://world_list.gd" type="Script" id=1]
-[ext_resource path="res://levels/basics/basics.tres" type="Resource" id=2]
+[ext_resource type="Script" path="res://world_list.gd" id="1"]
+[ext_resource type="Resource" uid="uid://k06qispryexq" path="res://levels/basics/basics.tres" id="2"]
 
 [resource]
-script = ExtResource( 1 )
-cur_worlds = [ ExtResource( 2 ) ]
+script = ExtResource("1")
+cur_worlds = [ExtResource("2")]

@@ -1,44 +1,61 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://cr8gxlq15tdtq"]
 
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://menu/pause.tscn" type="PackedScene" id=2]
-[ext_resource path="res://level_base/negate_text.gdshader" type="Shader" id=3]
-[ext_resource path="res://menu/main.tres" type="Theme" id=4]
-[ext_resource path="res://menu/level_controller.gd" type="Script" id=5]
+[ext_resource type="PackedScene" uid="uid://c12ixcrx422dp" path="res://player/Player.tscn" id="1"]
+[ext_resource type="Theme" uid="uid://s1op4jnwvprq" path="res://menu/main.tres" id="1_egw3f"]
+[ext_resource type="PackedScene" path="res://menu/pause.tscn" id="2"]
+[ext_resource type="Shader" path="res://level_base/negate_text.gdshader" id="3"]
+[ext_resource type="Script" path="res://menu/level_controller.gd" id="5"]
 
-[sub_resource type="ShaderMaterial" id=4]
-shader = ExtResource( 3 )
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_es61w"]
+shader = ExtResource("3")
 
 [node name="Control" type="Control"]
-pause_mode = 2
-material = SubResource( 4 )
+process_mode = 3
+material = SubResource("ShaderMaterial_es61w")
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 4 )
-script = ExtResource( 5 )
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_egw3f")
+script = ExtResource("5")
 
-[node name="ViewportContainer" type="ViewportContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -640.0
+offset_right = 360.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Viewport" type="Viewport" parent="ViewportContainer"]
-pause_mode = 1
-size = Vector2( 720, 1280 )
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+process_mode = 1
+disable_3d = true
 handle_input_locally = false
-render_target_update_mode = 3
+size = Vector2i(720, 1280)
+render_target_update_mode = 4
 
-[node name="Player" parent="ViewportContainer/Viewport" instance=ExtResource( 1 )]
-position = Vector2( 360, 980 )
+[node name="Player" parent="SubViewportContainer/SubViewport" instance=ExtResource("1")]
+position = Vector2(360, 980)
 
-[node name="PauseMenu" parent="." instance=ExtResource( 2 )]
+[node name="PauseMenu" parent="." instance=ExtResource("2")]
 visible = false
+anchors_preset = 0
 
 [node name="PauseBtn" type="Button" parent="."]
 use_parent_material = true
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 91.0
-margin_bottom = 90.0
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 91.0
+offset_bottom = 90.0
 action_mode = 0
 text = "| |"
 

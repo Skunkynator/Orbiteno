@@ -4,7 +4,7 @@ extends Node2D
 signal finished
 
 
-export var speed : float = 300
+@export var speed : float = 300
 var height : float = 1
 var moving : bool = true
 
@@ -32,5 +32,5 @@ func scroll_to_start() -> void:
 	create_tween()\
 			.tween_property(self,"position:y",0.0,time)\
 			.set_trans(Tween.TRANS_BACK)
-	yield(get_tree().create_timer(time),"timeout")
+	await get_tree().create_timer(time).timeout
 	moving = true

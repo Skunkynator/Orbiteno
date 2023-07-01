@@ -1,39 +1,38 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://3tgyn4qb6ibj"]
 
-[ext_resource path="res://level_base/obstacle.gd" type="Script" id=1]
-[ext_resource path="res://level_base/negate.gdshader" type="Shader" id=2]
+[ext_resource type="Script" path="res://level_base/obstacle.gd" id="1"]
+[ext_resource type="Shader" path="res://level_base/negate.gdshader" id="2"]
 
-[sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 2 )
+[sub_resource type="ShaderMaterial" id="1"]
+shader = ExtResource("2")
 
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 50, 50 )
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gegf4"]
+size = Vector2(100, 100)
 
-[sub_resource type="ShaderMaterial" id=7]
-shader = ExtResource( 2 )
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qyunj"]
+shader = ExtResource("2")
 
-[sub_resource type="Gradient" id=6]
-offsets = PoolRealArray( 0 )
-colors = PoolColorArray( 1, 1, 1, 1 )
+[sub_resource type="Gradient" id="Gradient_1jqbl"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
 
-[sub_resource type="GradientTexture" id=5]
-gradient = SubResource( 6 )
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j7kjq"]
+gradient = SubResource("Gradient_1jqbl")
 width = 1
 
 [node name="Area2D" type="Area2D"]
-material = SubResource( 1 )
+material = SubResource("1")
 collision_layer = 3
 collision_mask = 0
 input_pickable = false
 monitoring = false
-script = ExtResource( 1 )
-obj_size = Vector2( 100, 100 )
+script = ExtResource("1")
+obj_size = Vector2(100, 100)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource( 8 )
+shape = SubResource("RectangleShape2D_gegf4")
 
-[node name="Visual" type="Sprite" parent="."]
-material = SubResource( 7 )
-scale = Vector2( 100, 100 )
-texture = SubResource( 5 )
+[node name="Visual" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_qyunj")
+scale = Vector2(100, 100)
+texture = SubResource("GradientTexture1D_j7kjq")

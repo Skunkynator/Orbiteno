@@ -2,11 +2,11 @@ extends Resource
 class_name WorldList
 
 
-export(Array, Resource) var cur_worlds : Array
+@export var cur_worlds : Array[WorldInfo]
 
 
 func get_level(name : String) -> LevelInfo:
-	if not name:
+	if name.is_empty():
 		return null
 	var name_arr = name.split("-")
 	var world : WorldInfo

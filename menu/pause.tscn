@@ -17,7 +17,7 @@ func _on_exit_pressed() -> void:
 "
 
 [node name="Control" type="Control"]
-pause_mode = 2
+process_mode = 2
 use_parent_material = true
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,19 +34,19 @@ script = SubResource( 1 )
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 use_parent_material = true
-margin_left = 96.0
-margin_top = 432.0
-margin_right = 336.0
-margin_bottom = 502.0
+offset_left = 96.0
+offset_top = 432.0
+offset_right = 336.0
+offset_bottom = 502.0
 size_flags_horizontal = 4
 text = "Continue"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 use_parent_material = true
-margin_left = 152.0
-margin_top = 522.0
-margin_right = 279.0
-margin_bottom = 592.0
+offset_left = 152.0
+offset_top = 522.0
+offset_right = 279.0
+offset_bottom = 592.0
 size_flags_horizontal = 4
 text = "Exit"
 

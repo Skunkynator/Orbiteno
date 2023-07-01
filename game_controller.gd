@@ -13,10 +13,9 @@ var menu : PackedScene = preload("res://menu/title.tscn")
 
 
 func _ready() -> void:
-	var conf_file := File.new()
-	if conf_file.file_exists("user://save.conf"):
-		conf_file.open("user://save.conf",File.READ)
-		conf = str2var(conf_file.get_as_text()) as Dictionary
+	if FileAccess.file_exists("user://save.conf"):
+		var conf_file := FileAccess.open("user://save.conf",FileAccess.READ)
+		conf = str_to_var(conf_file.get_as_text()) as Dictionary
 		conf_file.close()
 		current_level = conf["last_level"]
 	else:
@@ -24,9 +23,8 @@ func _ready() -> void:
 
 
 func save_current() -> void:
-	var conf_file := File.new()
-	conf_file.open("user://save.conf",File.WRITE)
-	conf_file.store_string(var2str(conf))
+	var conf_file := FileAccess.open("user://save.conf",FileAccess.WRITE)
+	conf_file.store_string(var_to_str(conf))
 	conf_file.close()
 
 
@@ -39,7 +37,7 @@ func load_current_level() -> void:
 	var level := worlds.get_level(current_level)
 	if not level:
 		level = worlds.cur_worlds[0].levels[0]
-	var level_controller : LeveLController = game.instance()
+	var level_controller : LeveLController = game.instantiate()
 	add_child(level_controller)
 	level_controller.load_level(level)
 
@@ -56,4 +54,4 @@ func finished(level_idx : int, world_idx : int):
 
 func load_main() -> void:
 	remove_child(get_child(0))
-	add_child(menu.instance())
+	add_child(menu.instantiate())
