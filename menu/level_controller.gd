@@ -18,14 +18,14 @@ func load_level(level : LevelInfo):
 	if current_lvl:
 		current_lvl.queue_free()
 	if not player:
-		player = get_node_or_null("ViewportContainer/Viewport/Player")
-		player.connect("died",self,"on_player_died")
+		player = get_node_or_null("SubViewportContainer/SubViewport/Player")
+		player.connect("died", Callable(self, "on_player_died"))
 	var idx : Array = GameController.worlds.get_level_index(level)
 	world_index = idx[0]
 	level_index = idx[1]
-	current_lvl = level.levelFile.instance()
-	$ViewportContainer/Viewport.add_child(current_lvl)
-	current_lvl.connect("finished",self,"load_next_level")
+	current_lvl = level.levelFile.instantiate()
+	$SubViewportContainer/SubViewport.add_child(current_lvl)
+	current_lvl.connect("finished", Callable(self, "load_next_level"))
 	world_info = GameController.worlds.cur_worlds[world_index]
 
 
@@ -40,12 +40,16 @@ func load_next_level() -> void:
 			return
 		world_info = GameController.worlds.cur_worlds[world_index]
 	reset_player()
-	yield(get_tree().create_timer(2),"timeout")
+	await get_tree().create_timer(2).timeout
 	load_level(world_info.levels[level_index])
 
 
 func reset_player() -> void:
 	player.reset_rotator()
+
+
+func _input(event):
+	$SubViewportContainer/SubViewport.push_input(event)
 
 
 func on_player_died() -> void:

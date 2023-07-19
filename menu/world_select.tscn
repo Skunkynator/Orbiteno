@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://bckccem2rjb4m"]
 
-[ext_resource path="res://menu/main.tres" type="Theme" id=1]
-[ext_resource path="res://menu/level_select.tscn" type="PackedScene" id=3]
+[ext_resource type="Theme" uid="uid://s1op4jnwvprq" path="res://menu/main.tres" id="1"]
+[ext_resource type="PackedScene" uid="uid://b6d7iqny6spv5" path="res://menu/level_select.tscn" id="3"]
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id="1"]
 script/source = "extends Control
 
 
 var btn_container : Control
-export(PackedScene) var lvl_select : PackedScene
+@export var lvl_select: PackedScene
 
 
 func _ready() -> void:
@@ -17,48 +17,52 @@ func _ready() -> void:
 		var world : WorldInfo = world_var
 		var btn := Button.new()
 		btn.text = world.name
-		btn.connect(\"pressed\",self,\"world_btn_pressed\",[world])
+		btn.connect(\"pressed\", Callable(self, \"world_btn_pressed\").bind(world))
 		btn_container.add_child(btn)
 
 
 func world_btn_pressed(world : WorldInfo):
-	var select = lvl_select.instance()
+	var select = lvl_select.instantiate()
 	get_parent().add_child(select)
 	select.display_levels(world)
 	queue_free()
 
 
 func back_btn_pressed():
-	get_parent().add_child(GameController.menu.instance())
+	get_parent().add_child(GameController.menu.instantiate())
 	queue_free()
 "
 
 [node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( -762, -127 )
-theme = ExtResource( 1 )
-script = SubResource( 1 )
-lvl_select = ExtResource( 3 )
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-762, -127)
+theme = ExtResource("1")
+script = SubResource("1")
+lvl_select = ExtResource("3")
 
 [node name="BackBtn" type="Button" parent="."]
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 90.0
-margin_bottom = 90.0
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 90.0
+offset_bottom = 90.0
 text = "<"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
 anchor_left = 0.2
 anchor_top = 0.1
 anchor_right = 0.8
 anchor_bottom = 0.9
 follow_focus = true
-scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-margin_right = 432.0
-margin_bottom = 864.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1

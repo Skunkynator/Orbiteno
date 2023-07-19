@@ -2,5 +2,5 @@ extends Resource
 class_name WorldInfo
 
 
-export var name : String
-export(Array, Resource) var levels : Array
+@export var name : String
+@export var levels : Array[LevelInfo]

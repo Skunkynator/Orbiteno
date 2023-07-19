@@ -1,54 +1,54 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://vuwm65irvcsv"]
 
-[ext_resource path="res://level_base/base.tscn" type="PackedScene" id=1]
-[ext_resource path="res://level_base/obstacle.tscn" type="PackedScene" id=2]
+[ext_resource type="PackedScene" path="res://level_base/base.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://3tgyn4qb6ibj" path="res://level_base/obstacle.tscn" id="2"]
 
-[node name="Level" instance=ExtResource( 1 )]
+[node name="Level" instance=ExtResource("1")]
 
 [node name="End" parent="." index="0"]
-position = Vector2( 0, -3000 )
+position = Vector2(0, -3281)
 
-[node name="Area2D" parent="." index="2" instance=ExtResource( 2 )]
-position = Vector2( 720, 0 )
+[node name="Area2D" parent="." index="2" instance=ExtResource("2")]
+position = Vector2(720, -281)
 rotation = 0.785398
-obj_size = Vector2( 400, 400 )
+obj_size = Vector2(400, 400)
 
-[node name="Area2D6" parent="." index="3" instance=ExtResource( 2 )]
-position = Vector2( 720, -1800 )
+[node name="Area2D6" parent="." index="3" instance=ExtResource("2")]
+position = Vector2(720, -2029)
 rotation = 0.785398
-obj_size = Vector2( 400, 400 )
+obj_size = Vector2(400, 400)
 
-[node name="Area2D7" parent="." index="4" instance=ExtResource( 2 )]
-position = Vector2( 720, -2250 )
+[node name="Area2D7" parent="." index="4" instance=ExtResource("2")]
+position = Vector2(720, -2495)
 rotation = 0.785398
-obj_size = Vector2( 400, 400 )
+obj_size = Vector2(400, 400)
 
-[node name="Area2D2" parent="." index="5" instance=ExtResource( 2 )]
-position = Vector2( 0, -450 )
+[node name="Area2D2" parent="." index="5" instance=ExtResource("2")]
+position = Vector2(0, -731)
 rotation = 0.785398
-obj_size = Vector2( 400, 400 )
+obj_size = Vector2(400, 400)
 
-[node name="Area2D3" parent="." index="6" instance=ExtResource( 2 )]
-position = Vector2( 0, -900 )
+[node name="Area2D3" parent="." index="6" instance=ExtResource("2")]
+position = Vector2(0, -1197)
 rotation = 0.785398
-obj_size = Vector2( 400, 400 )
+obj_size = Vector2(400, 400)
 
-[node name="Area2D4" parent="." index="7" instance=ExtResource( 2 )]
-position = Vector2( -50, -1350 )
+[node name="Area2D4" parent="." index="7" instance=ExtResource("2")]
+position = Vector2(-50, -1613)
 rotation = 0.785398
-obj_size = Vector2( 400, 400 )
+obj_size = Vector2(400, 400)
 
-[node name="Area2D5" parent="." index="8" instance=ExtResource( 2 )]
-position = Vector2( 770, -1350 )
+[node name="Area2D5" parent="." index="8" instance=ExtResource("2")]
+position = Vector2(770, -1613)
 rotation = 0.785398
-obj_size = Vector2( 400, 400 )
+obj_size = Vector2(400, 400)
 
-[node name="Area2D8" parent="." index="9" instance=ExtResource( 2 )]
-position = Vector2( -50, -2700 )
+[node name="Area2D8" parent="." index="9" instance=ExtResource("2")]
+position = Vector2(-50, -2864)
 rotation = 0.785398
-obj_size = Vector2( 400, 400 )
+obj_size = Vector2(400, 400)
 
-[node name="Area2D9" parent="." index="10" instance=ExtResource( 2 )]
-position = Vector2( 770, -2700 )
+[node name="Area2D9" parent="." index="10" instance=ExtResource("2")]
+position = Vector2(770, -2864)
 rotation = 0.785398
-obj_size = Vector2( 400, 400 )
+obj_size = Vector2(400, 400)

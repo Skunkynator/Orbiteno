@@ -10,10 +10,10 @@ Note: This is a simple implementation, I will update it later on.
 extends Line2D
 
 
-export(bool) var emit := true
-export(float) var lifetime := 0.5
-export(float) var distance := 20.0
-export(int) var segments := 20
+@export var emit: bool = true
+@export var lifetime: float = 0.5
+@export var distance: float = 20.0
+@export var segments: int = 20
 var target : Node2D
 
 var trail_points := []
@@ -39,7 +39,7 @@ func _ready():
 	show_behind_parent = true
 	target = get_parent()
 	clear_points()
-	set_as_toplevel(true)
+	set_as_top_level(true)
 	position = Vector2()
 
 
@@ -61,9 +61,9 @@ func update_points() -> void:
 	var delta = get_process_delta_time()
 		
 	if trail_points.size() > segments:
-		trail_points.invert()
+		trail_points.reverse()
 		trail_points.resize(segments)
-		trail_points.invert()
+		trail_points.reverse()
 	
 	clear_points()
 	for point in trail_points:
