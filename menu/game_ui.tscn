@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://c12ixcrx422dp" path="res://player/Player.tscn" id="1"]
 [ext_resource type="Theme" uid="uid://s1op4jnwvprq" path="res://menu/main.tres" id="1_egw3f"]
 [ext_resource type="PackedScene" path="res://menu/pause.tscn" id="2"]
-[ext_resource type="Shader" path="res://level_base/negate_text.gdshader" id="3"]
-[ext_resource type="Script" path="res://menu/level_controller.gd" id="5"]
+[ext_resource type="Shader" uid="uid://8mfqdd1tcjx4" path="res://level_base/negate_text.gdshader" id="3"]
+[ext_resource type="Script" uid="uid://xpty77ul5g17" path="res://menu/level_controller.gd" id="5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_es61w"]
 shader = ExtResource("3")

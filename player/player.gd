@@ -36,7 +36,7 @@ func _input(event : InputEvent):
 			touch_sum -= touches[event.index]
 			touches.erase(event.index)
 		elif event.pressed and not event.index in touches:
-			touches[event.index] = -1 if event.position.x < 360 else 1
+			touches[event.index] = -1 if event.position.x < get_viewport_rect().size.x / 2 else 1
 			touch_sum += touches[event.index]
 
 
@@ -58,4 +58,3 @@ func reset_rotator() -> void:
 	dead = true
 	await get_tree().create_timer(time).timeout
 	dead = false
-

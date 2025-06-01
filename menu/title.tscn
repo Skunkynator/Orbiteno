@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ddmrjb0lau7sl"]
 
 [ext_resource type="FontFile" uid="uid://u4fw7nsa6jad" path="res://menu/Orbitron.otf" id="1"]
-[ext_resource type="Shader" path="res://level_base/negate_text.gdshader" id="2"]
+[ext_resource type="Shader" uid="uid://8mfqdd1tcjx4" path="res://level_base/negate_text.gdshader" id="2"]
 [ext_resource type="Theme" uid="uid://s1op4jnwvprq" path="res://menu/main.tres" id="3"]
 [ext_resource type="PackedScene" uid="uid://bckccem2rjb4m" path="res://menu/world_select.tscn" id="4"]
 
@@ -31,9 +31,9 @@ shader = ExtResource("2")
 
 [sub_resource type="FontFile" id="2"]
 fallbacks = Array[Font]([ExtResource("1")])
-face_index = null
-embolden = null
-transform = null
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0

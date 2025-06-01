@@ -1,8 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://d01h60ptisquu"]
 
-[ext_resource path="res://menu/main.tres" type="Theme" id=1]
+[ext_resource type="Theme" uid="uid://s1op4jnwvprq" path="res://menu/main.tres" id="1"]
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id="1"]
 script/source = "extends Node
 
 
@@ -21,7 +21,7 @@ process_mode = 2
 use_parent_material = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 1 )
+theme = ExtResource("1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 use_parent_material = true
@@ -30,7 +30,7 @@ anchor_top = 0.1
 anchor_right = 0.8
 anchor_bottom = 0.9
 alignment = 1
-script = SubResource( 1 )
+script = SubResource("1")
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 use_parent_material = true

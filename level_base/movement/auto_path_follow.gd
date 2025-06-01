@@ -6,4 +6,4 @@ class_name AutoPathFollow2D
 
 
 func _process(delta: float) -> void:
-	offset += delta * speed * 500
+	h_offset += delta * speed * 500

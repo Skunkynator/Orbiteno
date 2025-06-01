@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WorldInfo" load_steps=19 format=3 uid="uid://k06qispryexq"]
 
-[ext_resource type="Script" path="res://world_info.gd" id="1"]
-[ext_resource type="Script" path="res://level_info.gd" id="2"]
+[ext_resource type="Script" uid="uid://cm28xe8akpyj" path="res://world_info.gd" id="1"]
+[ext_resource type="Script" uid="uid://c2r8qja5n4c86" path="res://level_info.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://db1du4jrm7ugs" path="res://levels/basics/01.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://vuwm65irvcsv" path="res://levels/basics/02.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://d2b223ncbsofe" path="res://levels/basics/03.tscn" id="5"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dseeyv8hke5sa" path="res://levels/basics/05.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://bkr0luukrihu1" path="res://levels/basics/06.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://bqgtw2wtxo2me" path="res://levels/basics/07.tscn" id="9"]
-[ext_resource type="PackedScene" path="res://levels/basics/08.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://cqr07tttyjavg" path="res://levels/basics/08.tscn" id="10"]
 
 [sub_resource type="Resource" id="1"]
 script = ExtResource("2")

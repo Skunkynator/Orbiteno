@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" path="res://level_base/base.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://3tgyn4qb6ibj" path="res://level_base/obstacle.tscn" id="2"]
-[ext_resource type="Script" path="res://level_base/movement/rotator.gd" id="3"]
+[ext_resource type="Script" uid="uid://b83cddkqoj1qo" path="res://level_base/movement/rotator.gd" id="3"]
 
 [node name="Level" instance=ExtResource("1")]
 

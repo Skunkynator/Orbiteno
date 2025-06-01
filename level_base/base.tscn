@@ -1,18 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://bovkl4daa2vf4"]
 
-[ext_resource path="res://level_base/level.gd" type="Script" id=2]
-[ext_resource path="res://level_base/obstacle.tscn" type="PackedScene" id=3]
+[ext_resource type="Script" uid="uid://cudnmrxiafgum" path="res://level_base/level.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://3tgyn4qb6ibj" path="res://level_base/obstacle.tscn" id="3"]
 
 [node name="Level" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="End" type="Node2D" parent="."]
 
 [node name="walls" type="Node" parent="."]
 
-[node name="RightWall" parent="walls" instance=ExtResource( 3 )]
-position = Vector2( 720, 0 )
-obj_size = Vector2( 100, 300000 )
+[node name="RightWall" parent="walls" instance=ExtResource("3")]
+position = Vector2(720, 0)
+obj_size = Vector2(100, 300000)
 
-[node name="LeftWall" parent="walls" instance=ExtResource( 3 )]
-obj_size = Vector2( 100, 300000 )
+[node name="LeftWall" parent="walls" instance=ExtResource("3")]
+obj_size = Vector2(100, 300000)
